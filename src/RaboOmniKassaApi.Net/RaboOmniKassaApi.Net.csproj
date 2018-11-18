@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BF0C7835-C8E9-4FFD-9F0A-EE5A2FFD12C4}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RaboOmniKassaApi.Net</RootNamespace>
+    <AssemblyName>RaboOmniKassaApi.Net</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Connectors\ApiConnector.cs" />
+    <Compile Include="Connectors\Http\HttpClientRestTemplate.cs" />
+    <Compile Include="Connectors\Http\IRestTemplate.cs" />
+    <Compile Include="Connectors\IConnector.cs" />
+    <Compile Include="Connectors\TokenProvider.cs" />
+    <Compile Include="EndPoints\EndPoint.cs" />
+    <Compile Include="Exceptions\RaboOmniKassaError.cs" />
+    <Compile Include="Exceptions\RaboOmniKassaException.cs" />
+    <Compile Include="Helpers\HashHelper.cs" />
+    <Compile Include="Helpers\JsonHelper.cs" />
+    <Compile Include="InMemoryTokenProvider.cs" />
+    <Compile Include="Models\AccessToken.cs" />
+    <Compile Include="Models\Address.cs" />
+    <Compile Include="Models\CustomerInformation.cs" />
+    <Compile Include="Models\Environment.cs" />
+    <Compile Include="Models\Money.cs" />
+    <Compile Include="Models\OrderItem.cs" />
+    <Compile Include="Models\PaymentBrand.cs" />
+    <Compile Include="Models\PaymentBrandForce.cs" />
+    <Compile Include="Models\ProductType.cs" />
+    <Compile Include="Models\Request\MerchantOrder.cs" />
+    <Compile Include="Models\Request\MerchantOrderRequest.cs" />
+    <Compile Include="Models\Response\AnnouncementResponse.cs" />
+    <Compile Include="Models\Response\MerchantOrderResponse.cs" />
+    <Compile Include="Models\Response\MerchantOrderResult.cs" />
+    <Compile Include="Models\Response\MerchantOrderStatusResponse.cs" />
+    <Compile Include="Models\Response\PaymentCompletedResponse.cs" />
+    <Compile Include="Models\Response\Response.cs" />
+    <Compile Include="Models\Signing\InvalidSignatureException.cs" />
+    <Compile Include="Models\Signing\ISignatureDataProvider.cs" />
+    <Compile Include="Models\Signing\Signable.cs" />
+    <Compile Include="Models\Signing\SignedRequest.cs" />
+    <Compile Include="Models\Signing\SignedResponse.cs" />
+    <Compile Include="Models\Signing\SigningKey.cs" />
+    <Compile Include="Models\VatCategory.cs" />
+    <Compile Include="OmniKassaApiClient.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
