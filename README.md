@@ -1,0 +1,1 @@
+# RaboOmniKassaApi.Net
