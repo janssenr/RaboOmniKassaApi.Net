@@ -1,0 +1,6 @@
+language: csharp
+solution: ./src/RaboOmniKassaApi.Net.sln
+notifications:
+  email:
+    - rob.janssen@upcmail.nl
+
