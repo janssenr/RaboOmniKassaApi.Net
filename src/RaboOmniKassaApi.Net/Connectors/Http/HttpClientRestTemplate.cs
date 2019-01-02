@@ -19,6 +19,7 @@ namespace RaboOmniKassaApi.Net.Connectors.Http
         public HttpClientRestTemplate(string baseUrl)
         {
             _client = new HttpClient { BaseAddress = new Uri(baseUrl) };
+            _client.DefaultRequestHeaders.ExpectContinue = false;
         }
 
         public void SetToken(string token)
