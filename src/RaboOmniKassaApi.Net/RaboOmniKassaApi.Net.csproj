@@ -20,7 +20,7 @@
 	</ItemGroup>
 	<Target Name="GetTargetPath" Returns="@(_FakeOutputPath)">
 		<ItemGroup>
-			<_FakeOutputPath Include="$(MSBuildProjectDirectory)\$(PackageOutputPath)\$(AssemblyName).UNK" />
+			<_FakeOutputPath Include="$(MSBuildProjectDirectory)\$(PackageOutputPath)\$(AssemblyName).$(OutputType)" />
 		</ItemGroup>
 	</Target>	
 </Project>
