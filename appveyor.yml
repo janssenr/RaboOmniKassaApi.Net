@@ -14,5 +14,6 @@ test:
     - src\RaboOmniKassaApi.Tests\bin\Debug\RaboOmniKassaApi.Tests.dll
 
 after_test:
-- .\src\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user "-filter:+[RaboOmniKassaApi*]*" -target:"vstest.console.exe" -targetargs:"/logger:Appveyor .\src\RaboOmniKassaApi.Tests\bin\Debug\RaboOmniKassaApi.Tests.dll" -output:".\coverage.xml"
+#- .\src\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -filter:"+[RaboOmniKassaApi*]*" -target:"vstest.console.exe" -targetargs:"/logger:Appveyor .\src\RaboOmniKassaApi.Tests\bin\Debug\RaboOmniKassaApi.Tests.dll" -output:".\coverage.xml"
+- .\src\packages\OpenCover.4.6.519\tools\OpenCover.Console.exe -register:user -target:"vstest.console.exe" -targetargs:"/logger:Appveyor .\src\RaboOmniKassaApi.Tests\bin\Debug\RaboOmniKassaApi.Tests.dll" -filter:"+[RaboOmniKassaApi*]*" -output:".\coverage.xml"
 - .\src\packages\Codecov.1.0.5\tools\codecov -f "coverage.xml"
