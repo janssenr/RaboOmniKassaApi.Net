@@ -12,6 +12,7 @@ The RaboOmniKassaApi.Net library is a C# API that can be used to communicate wit
 
 ## Supported Platforms
 - .NET Framework (4.5.1 and higher)
+- .NET Standard (2.0)
 
 ## Installation
 
